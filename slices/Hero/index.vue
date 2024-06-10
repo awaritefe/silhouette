@@ -41,7 +41,10 @@ defineProps(
           {{ slice.primary.button_text }}
         </PrismicLink>
       </div>
-      <PrismicImage :field="slice.primary.image" class="drop-shadow-xl" />
+      <PrismicImage
+        :field="slice.primary.image"
+        class="drop-shadow-xl rounded-xl"
+      />
     </div>
   </bounded>
 </template>

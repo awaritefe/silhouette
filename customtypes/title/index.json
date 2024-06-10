@@ -1,0 +1,17 @@
+{
+  "format": "custom",
+  "id": "title",
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      }
+    }
+  },
+  "label": "Title",
+  "repeatable": true,
+  "status": true
+}

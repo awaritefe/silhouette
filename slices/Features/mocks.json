@@ -1,0 +1,175 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Header H2 Title",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"feature_content": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Title ",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"copy",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem ipsum dolar sit amet"
+								}
+							],
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Calender",
+									"type": "Select"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "Bargrapth"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Title 2",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"copy",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem ipsum dolar sit amet"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "Clover"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Title 3",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"copy",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem ipsum dolar sit amet"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "Hourglass"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Title 4",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"copy",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem ipsum dolar sit amet"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

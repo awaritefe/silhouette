@@ -166,7 +166,78 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = PageDocument | SettingsDocument;
+interface TitleDocumentData {}
+
+/**
+ * Title document from Prismic
+ *
+ * - **API ID**: `title`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TitleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TitleDocumentData>, "title", Lang>;
+
+export type AllDocumentTypes = PageDocument | SettingsDocument | TitleDocument;
+
+/**
+ * Primary content in *Features → Primary*
+ */
+export interface FeaturesSliceDefaultPrimary {
+  /**
+   * Heading field in *Features → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: H2 Heading
+   * - **API ID Path**: features.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Feature Content field in *Features → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.feature_content[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  feature_content: prismic.GroupField<
+    Simplify<FeaturesDocumentDataFeatureContentItem>
+  >;
+}
+
+/**
+ * Default variation for Features Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Features*
+ */
+type FeaturesSliceVariation = FeaturesSliceDefault;
+
+/**
+ * Features Shared Slice
+ *
+ * - **API ID**: `features`
+ * - **Description**: Features
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSlice = prismic.SharedSlice<
+  "features",
+  FeaturesSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -379,7 +450,14 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      TitleDocument,
+      TitleDocumentData,
       AllDocumentTypes,
+      FeaturesSlice,
+      FeaturesDocumentDataFeatureContentItem,
+      FeaturesSliceDefaultPrimary,
+      FeaturesSliceVariation,
+      FeaturesSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceHorizontalPrimary,
