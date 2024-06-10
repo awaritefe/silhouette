@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Productivity that flows with your life.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Unleash your potential by harmonising your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Try for free"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1593435221011-e009143b031e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxoZXJvfGVufDB8fHx8MTcxNzg3MTQyOHww&ixlib=rb-4.0.3&q=85&rect=0%2C134%2C4288%2C2412&w=1280&h=720",
+				"alt": "Hero image",
+				"origin": {
+					"id": "QJuzFcO-p3A",
+					"url": "https://images.unsplash.com/photo-1593435221011-e009143b031e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxoZXJvfGVufDB8fHx8MTcxNzg3MTQyOHww&ixlib=rb-4.0.3&q=85",
+					"width": 4288,
+					"height": 2680
+				},
+				"width": 1280,
+				"height": 720,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 134
+					}
+				},
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]
