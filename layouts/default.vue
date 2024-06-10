@@ -13,9 +13,7 @@ init();
 </script>
 
 <template>
-  <div
-    class="fixed inset-0 bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1]"
-  >
+  <div class="inset-0 bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1]">
     <Header />
     <slot />
     <Footer />

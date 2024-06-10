@@ -5,7 +5,7 @@ const currentYear = ref(new Date().getFullYear());
 </script>
 
 <template>
-  <Bounded as="footer" class="bg-white">
+  <Bounded as="footer" class="bg-white custom-clip-path custom-box-shadow">
     <div class="flex justify-between items-center gap-4 flex-col sm:flex-row">
       <Logo />
       <p class="text-xs">©{{ currentYear }} {{ settings.data.site_title }}</p>

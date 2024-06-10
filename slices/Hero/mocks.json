@@ -42,7 +42,6 @@
 				}
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"url": "https://images.unsplash.com/photo-1593435221011-e009143b031e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxoZXJvfGVufDB8fHx8MTcxNzg3MTQyOHww&ixlib=rb-4.0.3&q=85&rect=0%2C134%2C4288%2C2412&w=1280&h=720",
 				"alt": "Hero image",
 				"origin": {
@@ -61,9 +60,100 @@
 						"y": 134
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "horizontal",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Horizontal H1 Title Header",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur labore fugiat incididunt ea proident nisi aliqua. Amet sit est labore anim ex. Dolore aliquip nisi magna fugiat dolor quis est amet minim amet laborum fugiat."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "call",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+					"width": 3882,
+					"height": 2584
+				},
+				"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?rect=326%2C0%2C3230%2C2584&w=1280&h=1024",
+				"width": 1280,
+				"height": 1024,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 326,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {
+					"1280x720": {
+						"origin": {
+							"id": "1280x720",
+							"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+							"width": 3424,
+							"height": 3424
+						},
+						"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?rect=0%2C749%2C3424%2C1926&w=1280&h=720",
+						"width": 1280,
+						"height": 720,
+						"edit": {
+							"zoom": 1,
+							"crop": {
+								"x": 0,
+								"y": 749
+							},
+							"background": "transparent"
+						}
+					}
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

@@ -17,3 +17,16 @@
 .heading--sm {
   @apply text-2xl md:text-3xl;
 }
+
+.button {
+  @apply block w-fit bg-cyan-700 hover:bg-cyan-500 transition-colors duration-200 ease-in-out py-3 px-[39px] font-header rounded-full text-white font-bold tracking-wider;
+}
+
+.custom-clip-path {
+  -webkit-clip-path: inset(0 -100vmax);
+  clip-path: inset(0 -100vmax);
+}
+
+.custom-box-shadow {
+  box-shadow: 0 0 0 100vmax white;
+}
