@@ -20,7 +20,11 @@ defineProps(
   >
     <div
       class="grid grid-cols-1 place-items-center"
-      :class="{ 'md:grid-cols-2': slice.variation === 'horizontal' }"
+      :class="{
+        'md:grid-cols-2 md:gap-8':
+          slice.variation === 'horizontal' ||
+          slice.variation === 'horizontalNoCta',
+      }"
     >
       <div
         class="flex flex-col"
@@ -28,15 +32,18 @@ defineProps(
       >
         <PrismicRichText
           :field="slice.primary.heading"
-          class="heading heading--xl max-w-3xl mb-4 md:mb-8"
+          class="heading heading--xl max-w-3xl mb-4 md:mb-8 text-center md:text-left"
         />
         <PrismicRichText
           :field="slice.primary.body"
-          class="max-w-lg mb-4 md:mb-8 text-2xl font-normal leading-10 font-body text-slate-600"
+          class="max-w-lg mb-4 md:mb-8 text-2xl text-center md:text-left font-normal leading-10 font-body text-slate-600"
         />
         <PrismicLink
-          :field="slice.primary.button_link"
-          class="button mb-8 md:mb-10"
+          :field="slice.primary.button_link || {}"
+          :class="{
+            'button mb-8 md:mb-10 mx-auto md:mx-0':
+              slice.variation !== 'horizontalNoCta',
+          }"
         >
           {{ slice.primary.button_text }}
         </PrismicLink>

@@ -28,12 +28,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Title ",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Lonely"
+											}
 										}
 									]
 								}
@@ -73,12 +71,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Title 2",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Frozen"
+											}
 										}
 									]
 								}
@@ -110,12 +106,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Title 3",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Short"
+											}
 										}
 									]
 								}
@@ -147,12 +141,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Title 4",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Value"
+											}
 										}
 									]
 								}

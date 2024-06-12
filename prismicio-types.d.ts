@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | BlogSlice
   | CallToActionSlice
   | MediaSlice
   | TestimonialsSlice
@@ -268,6 +269,48 @@ export type AllDocumentTypes =
   | SettingsDocument
   | TestimonialDocument
   | TitleDocument;
+
+/**
+ * Primary content in *Blog → Primary*
+ */
+export interface BlogSliceDefaultPrimary {
+  /**
+   * Textarea field in *Blog → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit amet...
+   * - **API ID Path**: blog.primary.textarea
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textarea: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Blog Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Blog*
+ */
+type BlogSliceVariation = BlogSliceDefault;
+
+/**
+ * Blog Shared Slice
+ *
+ * - **API ID**: `blog`
+ * - **Description**: Blog
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogSlice = prismic.SharedSlice<"blog", BlogSliceVariation>;
 
 /**
  * Primary content in *CallToAction → Primary*
@@ -538,9 +581,60 @@ export type HeroSliceHorizontal = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceHorizontalNoCtaPrimary {
+  /**
+   * Heading field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Hero section H1 header
+   * - **API ID Path**: hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit Amet
+   * - **API ID Path**: hero.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"1280x720">;
+}
+
+/**
+ * Horizontal No CTA variation for Hero Slice
+ *
+ * - **API ID**: `horizontalNoCta`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceHorizontalNoCta = prismic.SharedSliceVariation<
+  "horizontalNoCta",
+  Simplify<HeroSliceHorizontalNoCtaPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceHorizontal;
+type HeroSliceVariation =
+  | HeroSliceDefault
+  | HeroSliceHorizontal
+  | HeroSliceHorizontalNoCta;
 
 /**
  * Hero Shared Slice
@@ -785,6 +879,10 @@ declare module "@prismicio/client" {
       TitleDocument,
       TitleDocumentData,
       AllDocumentTypes,
+      BlogSlice,
+      BlogSliceDefaultPrimary,
+      BlogSliceVariation,
+      BlogSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
@@ -797,9 +895,11 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceHorizontalPrimary,
+      HeroSliceHorizontalNoCtaPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHorizontal,
+      HeroSliceHorizontalNoCta,
       MediaSlice,
       MediaSliceDefaultPrimary,
       MediaSliceMediaImageRightPrimary,

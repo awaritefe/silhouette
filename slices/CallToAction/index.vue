@@ -23,7 +23,7 @@ defineProps(
     >
       <PrismicRichText
         :field="slice.primary.heading"
-        class="mb-8 heading heading--sm"
+        class="mb-8 text-center heading heading--sm"
       />
       <PrismicRichText
         :field="slice.primary.copy"

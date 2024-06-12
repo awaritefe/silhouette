@@ -29,14 +29,13 @@ defineProps(
       <div
         v-for="item in slice.primary.feature_content"
         :key="item.icons ?? ''"
-        class="max-w-xs grid sm:place-items-start place-items-center text-center sm:text-center"
+        class="max-w-xs mx-auto grid sm:place-items-start place-items-center text-center sm:text-left"
       >
         <div v-if="item.icons" class="mb-5">
           <icon :name="item.icons" />
         </div>
         <PrismicRichText
           :field="item.title"
-          wrapper="h3"
           class="heading heading--sm !font-medium pb-3"
         />
         <p
