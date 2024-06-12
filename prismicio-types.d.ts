@@ -169,6 +169,8 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+type TestimonialDocumentDataSlicesSlice = TestimonialsSlice;
+
 /**
  * Content for Testimonial documents
  */
@@ -216,6 +218,17 @@ interface TestimonialDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   quote: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Testimonial*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TestimonialDocumentDataSlicesSlice>;
 }
 
 /**
@@ -511,14 +524,26 @@ export type RichTextSlice = prismic.SharedSlice<
  */
 export interface TestimonialsSliceDefaultPrimary {
   /**
-   * Testimonial field in *Testimonials → Primary*
+   * Heading field in *Testimonials → Primary*
    *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.testimonial
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: H2 Heading
+   * - **API ID Path**: testimonials.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  testimonial: prismic.ContentRelationshipField<"testimonial">;
+  heading: prismic.RichTextField;
+
+  /**
+   * Testimonials field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.testimonials[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  testimonials: prismic.GroupField<
+    Simplify<TestimonialsDocumentDataTestimonialsItem>
+  >;
 }
 
 /**
@@ -569,6 +594,7 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       TestimonialDocument,
       TestimonialDocumentData,
+      TestimonialDocumentDataSlicesSlice,
       TitleDocument,
       TitleDocumentData,
       AllDocumentTypes,
@@ -588,6 +614,7 @@ declare module "@prismicio/client" {
       RichTextSliceVariation,
       RichTextSliceDefault,
       TestimonialsSlice,
+      TestimonialsDocumentDataTestimonialsItem,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,

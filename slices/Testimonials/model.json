@@ -12,14 +12,32 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "testimonial": {
-          "type": "Link",
+        "heading": {
+          "type": "StructuredText",
           "config": {
-            "label": "Testimonial",
-            "select": "document",
-            "customtypes": [
-              "testimonial"
-            ]
+            "label": "Heading",
+            "placeholder": "H2 Heading",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "testimonials": {
+          "type": "Group",
+          "config": {
+            "label": "Testimonials",
+            "repeat": true,
+            "fields": {
+              "testimonial": {
+                "type": "Link",
+                "config": {
+                  "label": "Testimonial",
+                  "select": "document",
+                  "customtypes": [
+                    "testimonial"
+                  ]
+                }
+              }
+            }
           }
         }
       },
