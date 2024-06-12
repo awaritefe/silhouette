@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | MediaSlice
   | TestimonialsSlice
   | FeaturesSlice
   | HeroSlice;
@@ -268,6 +270,81 @@ export type AllDocumentTypes =
   | TitleDocument;
 
 /**
+ * Primary content in *CallToAction → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Heading field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: H2 Heading CTA
+   * - **API ID Path**: call_to_action.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Copy field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit amet...
+   * - **API ID Path**: call_to_action.primary.copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  copy: prismic.RichTextField;
+
+  /**
+   * Button Text field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Button
+   * - **API ID Path**: call_to_action.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
+
+/**
  * Primary content in *Features → Primary*
  */
 export interface FeaturesSliceDefaultPrimary {
@@ -475,6 +552,116 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceHorizontal;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Media → Primary*
+ */
+export interface MediaSliceDefaultPrimary {
+  /**
+   * Image field in *Media → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"Sq">;
+
+  /**
+   * Heading field in *Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: H2 Heading
+   * - **API ID Path**: media.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Copy field in *Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit amet...
+   * - **API ID Path**: media.primary.copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  copy: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Media Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MediaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MediaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Media → Primary*
+ */
+export interface MediaSliceMediaImageRightPrimary {
+  /**
+   * Image field in *Media → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"Sq">;
+
+  /**
+   * Heading field in *Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: H2 Heading
+   * - **API ID Path**: media.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * copy field in *Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit amet...
+   * - **API ID Path**: media.primary.copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  copy: prismic.RichTextField;
+}
+
+/**
+ * Media - Image right variation for Media Slice
+ *
+ * - **API ID**: `mediaImageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MediaSliceMediaImageRight = prismic.SharedSliceVariation<
+  "mediaImageRight",
+  Simplify<MediaSliceMediaImageRightPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Media*
+ */
+type MediaSliceVariation = MediaSliceDefault | MediaSliceMediaImageRight;
+
+/**
+ * Media Shared Slice
+ *
+ * - **API ID**: `media`
+ * - **Description**: Media
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MediaSlice = prismic.SharedSlice<"media", MediaSliceVariation>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -598,6 +785,10 @@ declare module "@prismicio/client" {
       TitleDocument,
       TitleDocumentData,
       AllDocumentTypes,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       FeaturesSlice,
       FeaturesDocumentDataFeatureContentItem,
       FeaturesSliceDefaultPrimary,
@@ -609,6 +800,12 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHorizontal,
+      MediaSlice,
+      MediaSliceDefaultPrimary,
+      MediaSliceMediaImageRightPrimary,
+      MediaSliceVariation,
+      MediaSliceDefault,
+      MediaSliceMediaImageRight,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

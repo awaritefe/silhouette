@@ -1,0 +1,157 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"url": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8cGVvcGxlfGVufDB8fHx8MTcxODE5MjQ5Nnww&ixlib=rb-4.0.3&q=85&rect=425%2C0%2C3147%2C2665&w=1280&h=1084",
+				"alt": "A group of friends at a coffee shop",
+				"origin": {
+					"id": "-uHVRvDr7pg",
+					"url": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8cGVvcGxlfGVufDB8fHx8MTcxODE5MjQ5Nnww&ixlib=rb-4.0.3&q=85",
+					"width": 3997,
+					"height": 2665
+				},
+				"width": 1280,
+				"height": 1084,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 425,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {
+					"Sq": {
+						"url": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8cGVvcGxlfGVufDB8fHx8MTcxODE5MjQ5Nnww&ixlib=rb-4.0.3&q=85&rect=666%2C0%2C2665%2C2665&w=1280&h=1280",
+						"alt": "A group of friends at a coffee shop",
+						"origin": {
+							"id": "-uHVRvDr7pg",
+							"url": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8cGVvcGxlfGVufDB8fHx8MTcxODE5MjQ5Nnww&ixlib=rb-4.0.3&q=85",
+							"width": 3997,
+							"height": 2665
+						},
+						"width": 1280,
+						"height": 1280,
+						"edit": {
+							"background": "transparent",
+							"zoom": 1,
+							"crop": {
+								"x": 666,
+								"y": 0
+							}
+						},
+						"credits": null
+					}
+				}
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Media component H2",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate officia ullamco ipsum amet enim. Do magna amet occaecat duis duis ex consequat ullamco reprehenderit consequat consectetur."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "mediaImageRight",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+					"width": 4480,
+					"height": 4480
+				},
+				"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?rect=0%2C343%2C4480%2C3794&w=1280&h=1084",
+				"width": 1280,
+				"height": 1084,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 343
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {
+					"Sq": {
+						"origin": {
+							"id": "Sq",
+							"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+							"width": 3935,
+							"height": 5894
+						},
+						"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?rect=0%2C980%2C3935%2C3935&w=1280&h=1280",
+						"width": 1280,
+						"height": 1280,
+						"edit": {
+							"zoom": 1,
+							"crop": {
+								"x": 0,
+								"y": 980
+							},
+							"background": "transparent"
+						},
+						"credits": null,
+						"alt": null
+					}
+				}
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Attack"
+						}
+					}
+				]
+			},
+			"copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ad anim quis do occaecat sint minim duis amet ea consectetur dolore."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

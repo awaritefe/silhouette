@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "CTA component ",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam excepteur ad labore id esse aliqua irure ullamco. Veniam ipsum Lorem magna veniam ut non ipsum cupidatat do. Laboris ea reprehenderit incididunt eu consectetur eiusmod enim id fugiat officia mollit qui ullamco ipsum."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Click here"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			}
+		},
+		"items": []
+	}
+]
