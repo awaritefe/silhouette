@@ -34,7 +34,6 @@ const testimonials = computed(() => {
         :key="item.testimonial.data.uid"
         class="bg-white shadow-lg rounded-lg px-8 md:px-12 py-6 md:py-12 grid content-between"
       >
-        <!-- <pre>{{ item.testimonial.data }}</pre> -->
         <PrismicRichText
           :field="item.testimonial.data.quote"
           class="text-2xl font-body text-slate-700 mb-8"
