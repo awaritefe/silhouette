@@ -10,7 +10,7 @@ const settings = useSettings();
         <li
           v-for="item of settings.data.navigation"
           :key="item.label || ''"
-          class="p-4"
+          class="p-4 box-shadow-underline hover:text-blue-950"
         >
           <PrismicLink :field="item.link">
             {{ item.label }}

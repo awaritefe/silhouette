@@ -2,14 +2,19 @@
 const settings = useSettings();
 const { asImageSrc } = usePrismic();
 
-async function init() {
-  await useSeoMeta({
-    title: settings.value?.data.site_title,
-    description: settings.value?.data.meta_description,
-    ogImage: asImageSrc(settings.value?.data.og_image),
-  });
-}
-init();
+const title = settings.value?.data.site_title;
+const description = settings.value?.data.meta_description;
+const ogImage = asImageSrc(settings.value?.data.og_image);
+
+useHead({
+  title,
+  meta: [
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImage },
+  ],
+});
 </script>
 
 <template>

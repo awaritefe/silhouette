@@ -4,35 +4,32 @@ const prismic = usePrismic();
 const route = useRoute();
 
 // Fetch data asynchronously
+// Define the async function to fetch the page data
+const fetchPageData = async () => {
+  try {
+    const response = await prismic.client.getByUID(
+      "page",
+      route.params.uid as string,
+      {
+        fetchLinks: [
+          "testimonial.quote",
+          "testimonial.avatar",
+          "testimonial.name",
+          "testimonial.job_title",
+        ],
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching page data:", error);
+    throw error;
+  }
+};
+
+// Use useAsyncData to fetch the page data
 const { data: page, error } = useAsyncData(
   route.params.uid as string,
-  async () => {
-    try {
-      const response = await prismic.client.getByUID(
-        "page",
-        route.params.uid as string,
-        {
-          fetchLinks: [
-            "testimonial.quote",
-            "testimonial.avatar",
-            "testimonial.name",
-            "testimonial.job_title",
-          ],
-        }
-      );
-      // Set SEO metadata
-      await useSeoMeta({
-        title: response.data.meta_title ?? undefined,
-        description: response.data.meta_description ?? undefined,
-        ogImage: prismic.asImageSrc(response.data.meta_image ?? undefined),
-      });
-      return response;
-    } catch (error) {
-      // Handle error
-      console.error("Error fetching page data:", error);
-      throw error;
-    }
-  }
+  fetchPageData
 );
 </script>
 
