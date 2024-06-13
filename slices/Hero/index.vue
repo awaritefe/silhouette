@@ -31,6 +31,7 @@ defineProps(
         :class="{ 'items-center text-center': slice.variation === 'default' }"
       >
         <PrismicRichText
+          v-cloak
           :field="slice.primary.heading"
           class="heading heading--xl max-w-3xl mb-4 md:mb-8 text-center"
           :class="{ 'md:text-left': slice.variation !== 'default' }"
