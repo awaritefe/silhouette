@@ -75,3 +75,6 @@ article {
     @apply pl-4 md:pl-8;
   }
 }
+[v-cloak] {
+  display: none;
+}

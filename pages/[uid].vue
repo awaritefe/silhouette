@@ -46,11 +46,13 @@ const { data: page, error } = useAsyncData(
     />
   </div>
   <!-- Optionally, render an error message if data fetching fails -->
-  <div v-else-if="error">
-    <p>Error fetching page data. Please try again later.</p>
-  </div>
+  <Bounded v-else-if="error">
+    <p class="text-2xl font-body text-slate-700">
+      Error fetching page data. Please try again later.
+    </p>
+  </Bounded>
   <!-- Optionally, render a loading indicator while data is being fetched -->
-  <div v-else>
-    <p>Loading...</p>
-  </div>
+  <Bounded v-else>
+    <p class="text-2xl font-body text-slate-700 mb-8">Loading...</p>
+  </Bounded>
 </template>

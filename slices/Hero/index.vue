@@ -32,11 +32,13 @@ defineProps(
       >
         <PrismicRichText
           :field="slice.primary.heading"
-          class="heading heading--xl max-w-3xl mb-4 md:mb-8 text-center md:text-left"
+          class="heading heading--xl max-w-3xl mb-4 md:mb-8 text-center"
+          :class="{ 'md:text-left': slice.variation !== 'default' }"
         />
         <PrismicRichText
           :field="slice.primary.body"
-          class="max-w-lg mb-4 md:mb-8 text-2xl text-center md:text-left font-normal leading-10 font-body text-slate-600"
+          class="max-w-lg mb-4 md:mb-8 text-2xl text-center font-normal leading-10 font-body text-slate-600"
+          :class="{ 'md:text-left': slice.variation !== 'default' }"
         />
         <PrismicLink
           :field="slice.primary.button_link || {}"
