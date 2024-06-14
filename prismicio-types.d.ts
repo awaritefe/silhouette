@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | ProjectGridSlice
   | BlogSlice
   | CallToActionSlice
   | MediaSlice
@@ -756,6 +757,61 @@ type MediaSliceVariation = MediaSliceDefault | MediaSliceMediaImageRight;
 export type MediaSlice = prismic.SharedSlice<"media", MediaSliceVariation>;
 
 /**
+ * Primary content in *ProjectGrid → Primary*
+ */
+export interface ProjectGridSliceDefaultPrimary {
+  /**
+   * Heading field in *ProjectGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: H2 Heading
+   * - **API ID Path**: project_grid.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Images field in *ProjectGrid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_grid.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<ProjectGridDocumentDataImagesItem>>;
+}
+
+/**
+ * Default variation for ProjectGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectGrid*
+ */
+type ProjectGridSliceVariation = ProjectGridSliceDefault;
+
+/**
+ * ProjectGrid Shared Slice
+ *
+ * - **API ID**: `project_grid`
+ * - **Description**: ProjectGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectGridSlice = prismic.SharedSlice<
+  "project_grid",
+  ProjectGridSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -906,6 +962,11 @@ declare module "@prismicio/client" {
       MediaSliceVariation,
       MediaSliceDefault,
       MediaSliceMediaImageRight,
+      ProjectGridSlice,
+      ProjectGridDocumentDataImagesItem,
+      ProjectGridSliceDefaultPrimary,
+      ProjectGridSliceVariation,
+      ProjectGridSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
