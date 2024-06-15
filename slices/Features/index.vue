@@ -21,7 +21,7 @@ defineProps(
     <PrismicText
       :field="slice.primary.heading"
       wrapper="h2"
-      class="heading heading--md text-center mb-12"
+      class="heading heading--lg text-center mb-6 md:mb-12"
     />
     <div
       class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-5xl mx-auto place-items-center sm:place-items-start"

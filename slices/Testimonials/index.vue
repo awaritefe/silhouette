@@ -20,7 +20,7 @@ const testimonials = computed(() => {
     <PrismicText
       :field="slice.primary.heading"
       wrapper="h2"
-      class="heading heading--md text-center mb-12"
+      class="heading heading--xl text-center mb-6 md:mb-12"
     />
 
     <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-8">

@@ -3,7 +3,7 @@ const settings = useSettings();
 </script>
 
 <template>
-  <Bounded as="header">
+  <Bounded as="header" class="pb-0 md:pb-10">
     <div class="flex justify-between items-center gap-4 flex-col sm:flex-row">
       <Logo />
       <ul class="flex">

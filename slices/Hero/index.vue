@@ -38,7 +38,7 @@ defineProps(
         />
         <PrismicRichText
           :field="slice.primary.body"
-          class="max-w-lg mb-4 md:mb-8 text-2xl text-center font-normal leading-10 font-body text-slate-600"
+          class="max-w-lg mb-4 md:mb-8 mb:text-2xl text-center font-normal leading-7 mb:leading-10 font-body text-slate-600"
           :class="{ 'md:text-left': slice.variation !== 'default' }"
         />
         <PrismicLink

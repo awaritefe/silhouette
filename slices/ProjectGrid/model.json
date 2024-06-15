@@ -32,7 +32,18 @@
                 "config": {
                   "label": "Image",
                   "constraint": {},
-                  "thumbnails": []
+                  "thumbnails": [
+                    {
+                      "name": "1280x720",
+                      "width": 1280,
+                      "height": 720
+                    },
+                    {
+                      "name": "1280x1080",
+                      "width": 1280,
+                      "height": 1080
+                    }
+                  ]
                 }
               },
               "title": {

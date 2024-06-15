@@ -19,7 +19,7 @@ defineProps(
     :data-slice-variation="slice.variation"
   >
     <article
-      class="bg-gradient-to-tr from-cyan-50 via-white bg-emerald-50 p-4 sm:p-8 md:p-10"
+      class="bg-white p-4 sm:p-8 md:p-10 custom-box-shadow custom-clip-path"
     >
       <PrismicRichText :field="slice.primary.textarea" class="text-slate-700" />
     </article>

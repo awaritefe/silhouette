@@ -31,7 +31,7 @@ defineProps(
       />
       <PrismicLink
         :field="slice.primary.button_link"
-        class="button mb-8 md:mb-10"
+        class="button mb-8 md:mb-10 text-center"
       >
         {{ slice.primary.button_text }}
       </PrismicLink>

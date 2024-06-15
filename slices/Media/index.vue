@@ -28,11 +28,11 @@ defineProps(
         <PrismicText
           :field="slice.primary.heading"
           wrapper="h2"
-          class="heading heading--lg text-center md:text-left mb-12"
+          class="heading heading--xl text-center md:text-left mb-6 md:mb-12"
         />
         <PrismicRichText
           :field="slice.primary.copy"
-          class="font-body text-2xl text-slate-600 max-w-md text-center md:text-left leading-10"
+          class="font-body text-xl text-slate-600 max-w-md text-center md:text-left leading-10"
         />
       </div>
     </div>
