@@ -54,6 +54,28 @@
             }
           }
         }
+      },
+      "button_link": {
+        "type": "Link",
+        "config": {
+          "label": "Button Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Button Text",
+          "placeholder": ""
+        }
+      },
+      "nav_menu_button": {
+        "type": "Text",
+        "config": {
+          "label": "Nav Menu Button",
+          "placeholder": ""
+        }
       }
     }
   }

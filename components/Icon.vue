@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-  name: "Calender" || "Bargrapth" || "Clover" || "Hourglass",
+  name: "Calender" || "Bargrapth" || "Clover" || "Hourglass" || "Menu",
   type: String,
   default: "",
 });
@@ -180,5 +180,32 @@ defineProps({
         <rect width="80" height="80" rx="16.6364" fill="white" />
       </clipPath>
     </defs>
+  </svg>
+
+  <!-- MENU ICON -->
+  <svg
+    v-if="name === 'Menu'"
+    width="20"
+    height="20"
+    viewBox="0 0 69 69"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.7 31.4C7 31.4 0 24.4 0 15.7C0 7 7 0 15.7 0C24.4 0 31.4 7 31.4 15.7C31.4 24.4 24.4 31.4 15.7 31.4Z"
+      fill="#fcba03"
+    />
+    <path
+      d="M53.1 31.4C44.4 31.4 37.4 24.4 37.4 15.7C37.4 7 44.4 0 53.1 0C61.8 0 68.8 7 68.8 15.7C68.8 24.4 61.8 31.4 53.1 31.4Z"
+      fill="#fcba03"
+    />
+    <path
+      d="M15.7 68.8C7 68.8 0 61.8 0 53.1C0 44.4 7 37.4 15.7 37.4C24.4 37.4 31.4 44.4 31.4 53.1C31.4 61.7 24.4 68.8 15.7 68.8Z"
+      fill="#fcba03"
+    />
+    <path
+      d="M53.1 68.8C44.4 68.8 37.4 61.8 37.4 53.1C37.4 44.4 44.4 37.4 53.1 37.4C61.8 37.4 68.8 44.4 68.8 53.1C68.8 61.7 61.8 68.8 53.1 68.8Z"
+      fill="#fcba03"
+    />
   </svg>
 </template>
