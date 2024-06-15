@@ -31,6 +31,7 @@ const props = defineProps(
             :field="item.image"
             class="h-full w-full cursor-pointer object-cover"
             :class="`hovered${index + 1}`"
+            loading="lazy"
           />
           <div
             class="absolute w-full h-full bg-white/[.7] top-0 left-0 content-center p-5 md:p-12 pointer-events-none even:z-10"

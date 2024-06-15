@@ -54,6 +54,7 @@ defineProps(
       <PrismicImage
         :field="slice.primary.image"
         class="drop-shadow-xl rounded-xl"
+        loading="lazy"
       />
     </div>
   </bounded>

@@ -23,6 +23,7 @@ defineProps(
         :field="slice.primary.image"
         class="rounded-lg"
         :class="{ 'md:order-2': slice.variation === 'mediaImageRight' }"
+        loading="lazy"
       />
       <div>
         <PrismicText

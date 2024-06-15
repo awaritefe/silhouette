@@ -39,6 +39,7 @@ const testimonials = computed(() => {
             class="rounded-full mr-4 aspect-square"
             height="56"
             width="56"
+            loading="lazy"
           />
           <div>
             <p class="text-sm w-full font-medium text-slate-700">
