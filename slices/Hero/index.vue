@@ -43,17 +43,18 @@ defineProps(
           :field="slice.primary.heading"
           class="heading heading--xl max-w-3xl mb-4 md:mb-8 text-center z-10"
           :class="{
-            'md:!text-4xl !text-slate-50': slice.variation === 'fullWidth',
+            'md:!text-4xl md:!text-slate-50': slice.variation === 'fullWidth',
             'md:text-left relative':
               slice.variation !== 'default' && slice.variation !== 'fullWidth',
           }"
         />
         <PrismicRichText
           :field="slice.primary.body"
-          class="max-w-lg mb-4 md:mb-8 mb:text-2xl text-center font-normal leading-7 mb:leading-10 font-body text-white z-10"
+          class="max-w-lg mb-4 md:mb-8 mb:text-2xl text-center font-normal leading-7 mb:leading-10 font-body text-slate-600 z-10"
           :class="{
             'md:text-left relative':
               slice.variation !== 'default' && slice.variation !== 'fullWidth',
+            'md:text-white': slice.variation === 'fullWidth',
           }"
         />
         <PrismicLink
