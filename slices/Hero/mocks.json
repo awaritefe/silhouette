@@ -7,12 +7,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading1",
 						"content": {
-							"text": "Productivity that flows with your life.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Spoken"
+						}
 					}
 				]
 			},
@@ -75,12 +73,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading1",
 						"content": {
-							"text": "Horizontal H1 Title Header",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Unless"
+						}
 					}
 				]
 			},
@@ -168,9 +164,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading1",
 						"content": {
-							"text": "Sunt incididunt reprehenderit tempor et esse velit. Lorem aliquip in duis excepteur proident. Non id nisi laborum officia."
+							"text": "Dirty"
 						}
 					}
 				]
@@ -223,6 +219,97 @@
 							"crop": {
 								"x": 0,
 								"y": 223
+							},
+							"background": "transparent"
+						},
+						"credits": null,
+						"alt": null
+					}
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "fullWidth",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Operation"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit ad eu adipisicing Lorem fugiat laborum nisi ut. Est elit qui veniam est anim elit Lorem nisi dolor esse."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "line",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?rect=468%2C0%2C4680%2C3744&w=1280&h=1024",
+				"width": 1280,
+				"height": 1024,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 468,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {
+					"1280x720": {
+						"origin": {
+							"id": "1280x720",
+							"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+							"width": 4000,
+							"height": 4000
+						},
+						"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?rect=0%2C875%2C4000%2C2250&w=1280&h=720",
+						"width": 1280,
+						"height": 720,
+						"edit": {
+							"zoom": 1,
+							"crop": {
+								"x": 0,
+								"y": 875
 							},
 							"background": "transparent"
 						},

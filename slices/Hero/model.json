@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "Hero section H1 header",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "heading1,strong,em"
           }
         },
         "body": {
@@ -74,7 +74,7 @@
             "label": "Heading",
             "placeholder": "Hero section H1 header",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "heading1"
           }
         },
         "body": {
@@ -136,7 +136,7 @@
             "label": "Heading",
             "placeholder": "Hero section H1 header",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "heading1"
           }
         },
         "body": {
@@ -146,6 +146,68 @@
             "placeholder": "Lorem ipsum dolar sit Amet",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 1280,
+              "height": 1024
+            },
+            "thumbnails": [
+              {
+                "name": "1280x720",
+                "width": 1280,
+                "height": 720
+              }
+            ]
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "fullWidth",
+      "name": "Full Width",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Hero section H1 header",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "Lorem ipsum dolar sit Amet",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": "Button"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
           }
         },
         "image": {

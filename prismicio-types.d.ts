@@ -553,12 +553,12 @@ export interface HeroSliceHorizontalPrimary {
   /**
    * Heading field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: Hero section H1 header
    * - **API ID Path**: hero.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.RichTextField;
+  heading: prismic.TitleField;
 
   /**
    * Body field in *Hero → Primary*
@@ -621,12 +621,12 @@ export interface HeroSliceHorizontalNoCtaPrimary {
   /**
    * Heading field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: Hero section H1 header
    * - **API ID Path**: hero.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.RichTextField;
+  heading: prismic.TitleField;
 
   /**
    * Body field in *Hero → Primary*
@@ -663,12 +663,81 @@ export type HeroSliceHorizontalNoCta = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceFullWidthPrimary {
+  /**
+   * Heading field in *Hero → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Hero section H1 header
+   * - **API ID Path**: hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Body field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit Amet
+   * - **API ID Path**: hero.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button Text field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Button
+   * - **API ID Path**: hero.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<"1280x720">;
+}
+
+/**
+ * Full Width variation for Hero Slice
+ *
+ * - **API ID**: `fullWidth`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceFullWidth = prismic.SharedSliceVariation<
+  "fullWidth",
+  Simplify<HeroSliceFullWidthPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
 type HeroSliceVariation =
   | HeroSliceDefault
   | HeroSliceHorizontal
-  | HeroSliceHorizontalNoCta;
+  | HeroSliceHorizontalNoCta
+  | HeroSliceFullWidth;
 
 /**
  * Hero Shared Slice
@@ -985,10 +1054,12 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceHorizontalPrimary,
       HeroSliceHorizontalNoCtaPrimary,
+      HeroSliceFullWidthPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHorizontal,
       HeroSliceHorizontalNoCta,
+      HeroSliceFullWidth,
       MediaSlice,
       MediaSliceDefaultPrimary,
       MediaSliceMediaImageRightPrimary,

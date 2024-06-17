@@ -23,7 +23,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Bounded as="header" class="pb-0 md:pb-10">
+  <Bounded as="header" class="pb-0 md:pb-10 relative z-50">
     <div class="flex justify-between items-center gap-4 flex-col md:flex-row">
       <Logo />
       <span
@@ -44,7 +44,7 @@ onUnmounted(() => {
         <li
           v-for="item of settings.data.navigation"
           :key="item.label || ''"
-          class="p-4 box-shadow-underline hover:text-blue-950"
+          class="p-4 relative box-shadow-underline hover:text-blue-950"
         >
           <PrismicLink :field="item.link">
             {{ item.label }}

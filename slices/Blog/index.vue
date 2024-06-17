@@ -18,9 +18,7 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <article
-      class="bg-white p-4 sm:p-8 md:p-10 custom-box-shadow custom-clip-path"
-    >
+    <article class="p-4 sm:p-8 md:p-10 custom-box-shadow custom-clip-path">
       <PrismicRichText :field="slice.primary.textarea" class="text-slate-700" />
     </article>
   </Bounded>
