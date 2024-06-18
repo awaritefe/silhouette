@@ -71,7 +71,7 @@ defineProps(
       </div>
       <PrismicImage
         :field="slice.primary.image"
-        class="drop-shadow-xl rounded-lg"
+        class="drop-shadow-xl rounded-xl"
         loading="lazy"
         :class="{ 'md:absolute z-0': slice.variation === 'fullWidth' }"
       />
