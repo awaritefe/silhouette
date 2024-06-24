@@ -34,7 +34,7 @@ defineProps(
         class="flex flex-col"
         :class="{
           'items-center text-center': slice.variation === 'default',
-          'p-10 md:py-10 m-auto md:m-0 justify-self-end smoky-bg md:max-w-lg':
+          'p-10 md:py-10 m-auto md:m-0 justify-self-end smoky-bg md:max-w-md lg:max-w-lg':
             slice.variation === 'fullWidth',
         }"
       >
