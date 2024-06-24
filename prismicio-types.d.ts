@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | FormSlice
   | ProjectGridSlice
   | BlogSlice
   | CallToActionSlice
@@ -477,6 +478,118 @@ export type FeaturesSlice = prismic.SharedSlice<
   "features",
   FeaturesSliceVariation
 >;
+
+/**
+ * Primary content in *Form → Primary*
+ */
+export interface FormSliceDefaultPrimary {
+  /**
+   * Image field in *Form → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Form → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolar sit amet...
+   * - **API ID Path**: form.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Full Name field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Full Name*
+   * - **API ID Path**: form.primary.full_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  full_name: prismic.KeyTextField;
+
+  /**
+   * Email field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Email*
+   * - **API ID Path**: form.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Subject field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.subject
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subject: prismic.KeyTextField;
+
+  /**
+   * Text Area field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Message*
+   * - **API ID Path**: form.primary.text_area
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_area: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Form → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Form Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Form*
+ */
+type FormSliceVariation = FormSliceDefault;
+
+/**
+ * Form Shared Slice
+ *
+ * - **API ID**: `form`
+ * - **Description**: Form
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSlice = prismic.SharedSlice<"form", FormSliceVariation>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -1050,6 +1163,10 @@ declare module "@prismicio/client" {
       FeaturesSliceDefaultPrimary,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
+      FormSlice,
+      FormSliceDefaultPrimary,
+      FormSliceVariation,
+      FormSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceHorizontalPrimary,

@@ -1,0 +1,79 @@
+{
+  "id": "form",
+  "type": "SharedSlice",
+  "name": "Form",
+  "description": "Form",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Lorem ipsum dolar sit amet...",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "full_name": {
+          "type": "Text",
+          "config": {
+            "label": "Full Name",
+            "placeholder": "Full Name*"
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": "Email*"
+          }
+        },
+        "subject": {
+          "type": "Text",
+          "config": {
+            "label": "Subject",
+            "placeholder": ""
+          }
+        },
+        "text_area": {
+          "type": "Text",
+          "config": {
+            "label": "Text Area",
+            "placeholder": "Message*"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
