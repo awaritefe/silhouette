@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
+import { useForm } from "vee-validate";
+import * as yup from "yup";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -11,6 +13,42 @@ defineProps(
     "context",
   ])
 );
+
+const { values, errors, defineField } = useForm({
+  validationSchema: yup.object({
+    email: yup.string().email().required(),
+    name: yup.string().min(2).required(),
+    subject: yup.string().min(2).required(),
+    message: yup.string().min(20).required(),
+  }),
+});
+
+// const email = useField("email", function (value) {
+//   if (!value) return "This field is required!";
+
+//   const regex =
+//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   if (!regex.test(String(value).toLowerCase())) {
+//     return "Please enter a valid email address";
+//   }
+
+//   return true;
+// });
+function onSubmit() {
+  console.log("Submitted");
+}
+const [name, nameAttrs] = defineField("name", {
+  validateOnModelUpdate: false,
+});
+const [email, emailAttrs] = defineField("email", {
+  validateOnModelUpdate: false,
+});
+const [subject, subjectAttrs] = defineField("subject", {
+  validateOnModelUpdate: false,
+});
+const [message, messageAttrs] = defineField("message", {
+  validateOnModelUpdate: false,
+});
 </script>
 
 <template>
@@ -18,6 +56,8 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
+    <pre>values: {{ values }}</pre>
+    <pre>errors: {{ errors }}</pre>
     <div class="md:flex">
       <PrismicImage
         :field="slice.primary.image"
@@ -29,7 +69,7 @@ defineProps(
           class="heading heading--sm pb-4"
           wrapper="h2"
         />
-        <form>
+        <form novalidate @submit.prevent="onSubmit">
           <div class="gap-2 lg:flex">
             <div class="inline-grid w-full lg:w-6/12">
               <label class="label lg:mt-2" for="name">{{
@@ -40,8 +80,11 @@ defineProps(
                 type="text"
                 id="name"
                 name="name"
+                v-model="name"
+                v-bind="nameAttrs"
                 placeholder="Jane Doe"
               />
+              <div class="text-red-600 min-h-6">{{ errors.name }}</div>
             </div>
             <div class="inline-grid w-full lg:w-6/12">
               <label class="label mt-2" for="email">{{
@@ -52,8 +95,11 @@ defineProps(
                 type="email"
                 id="email"
                 name="email"
+                v-model="email"
+                v-bind="emailAttrs"
                 placeholder="Jane.Doe@example.com"
               />
+              <div class="text-red-600 min-h-6">{{ errors.email }}</div>
             </div>
           </div>
           <div class="inline-grid w-full">
@@ -65,8 +111,11 @@ defineProps(
               type="subject"
               id="subject"
               name="subject"
+              v-model="subject"
+              v-bind="subjectAttrs"
               placeholder="Subject"
             />
+            <div class="text-red-600 min-h-6">{{ errors.subject }}</div>
           </div>
           <div class="inline-grid w-full">
             <label class="label mt-2" for="message">{{
@@ -77,8 +126,11 @@ defineProps(
               type="message"
               id="message"
               name="message"
+              v-model="message"
+              v-bind="messageAttrs"
               placeholder="Message..."
             ></textarea>
+            <div class="text-red-600 min-h-6">{{ errors.message }}</div>
           </div>
           <div class="inline-grid w-full">
             <input
