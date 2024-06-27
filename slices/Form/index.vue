@@ -2,6 +2,7 @@
 import { type Content } from "@prismicio/client";
 import { useForm } from "vee-validate";
 import * as yup from "yup";
+import axios from "axios";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -23,19 +24,16 @@ const { values, errors, defineField } = useForm({
   }),
 });
 
-// const email = useField("email", function (value) {
-//   if (!value) return "This field is required!";
-
-//   const regex =
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   if (!regex.test(String(value).toLowerCase())) {
-//     return "Please enter a valid email address";
-//   }
-
-//   return true;
-// });
-function onSubmit() {
-  console.log("Submitted");
+async function onSubmit() {
+  try {
+    // Convert Proxy object to plain object
+    const formData = { ...values };
+    console.log("Sending data:", formData); // Debug log
+    const response = await axios.post("http://localhost:8000/send", formData);
+    console.log("Email sent successfully:", response.data);
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
 }
 const [name, nameAttrs] = defineField("name", {
   validateOnModelUpdate: false,
